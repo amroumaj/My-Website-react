@@ -1,7 +1,10 @@
-import React from 'react'
-import {useRef, useState, useEffect} from 'react';
+import AuthContext from '../context/AuthProvider';
+import {useRef, useState, useEffect,useContext} from 'react';
+import axios from '../API/axios'; 
 
-const Login = () => {
+const LOGIN_URL = '/auth';
+const Login = () => { 
+  const {setAuth} =useContext(AuthContext);
   const userRef =useRef();
   const errRef =useRef();
   
@@ -20,7 +23,32 @@ const Login = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setSuccess(true);
+    
+    try {
+      const response = await axios.post(LOGIN_URL,JSON.stringify({user, pwd}),
+      {
+        headers: {'Content-Type': 'application/json'},withCredentials:true
+      }) ;   
+      const accessToken = response?.data?.accessToken;
+      const roles = response?.data?.roles;
+      setUser('');
+      setPwd('');
+      setSuccess(true);
+    }catch(err){
+      if (err?.response) {
+        setErrMsg('No Server Response');
+      }
+      else if(err.response?.status=== 400){
+        setErrMsg('Missing Username or Password');
+      }
+      else if(err.response?.status === 401){
+        setErrMsg('Unauthorized');
+      }
+      else{
+        setErrMsg('Login Failed');
+      }
+      errRef.current.focus();
+    }
   }
   
   return (
@@ -51,7 +79,7 @@ const Login = () => {
       <p>
         Need an account ? <br/>
         <span className='line'>
-          <a href='#'>Sign Up</a>
+          <a href='/Register'>Sign Up</a>
         </span>
       </p>
     </section>
