@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+a, a:visited {
+    color: aliceblue    ;
+}
+
+section{
+    width:100%;
+    display:flex;
+    max-width: 650px;
+    min-height: 400px;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    background-color:rgba(0,0,0,0.4);
+    align-items: center;
+    border-radius:20px ;
+}
+

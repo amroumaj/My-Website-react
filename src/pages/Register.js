@@ -1,7 +1,8 @@
 import {useRef,useState, useEffect} from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import axios from "./API/axios";
+import axios from "../API/axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './Register.css';
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -102,7 +103,8 @@ const Register = () => {
                             id="username"
                             ref={userRef}
                             autoComplete="off"
-                            onChange={(e)=>useState(e.target.value)}
+                            onChange={(e)=>setUser(e.target.value)}
+                            value={user}
                             required
                             aria-invalid={validName ? "false" : "true"}
                             aria-describedby="uidnots"
@@ -128,7 +130,7 @@ const Register = () => {
                         <input 
                             type="password"
                             id="password"
-                            onChange={()=>setPwd(e.target.value)}
+                            onChange={(e)=>setPwd(e.target.value)}
                             required
                             aria-invalid={validPwd ? "false" :true}
                             onFocus={()=>setPwdFocus(true)}
@@ -157,7 +159,7 @@ const Register = () => {
                         <input 
                             type="password"
                             id="confirm_pwd"
-                            onChange={()=>setMatchPwd(e.target.value)}
+                            onChange={(e)=>setMatchPwd(e.target.value)}
                             required
                             aria-invalid={validMatch ? "false" :true}
                             aria-describedby="confirmnote"
