@@ -42,7 +42,7 @@ const Register = () => {
         const result = PWD_REGEX.test(pwd);
         console.log(result);
         console.log(pwd);
-        setValidMatch(result);
+        setValidPwd(result);
         const match = pwd ===matchPwd;
         setValidMatch(match);
     },[pwd,matchPwd])
@@ -62,7 +62,7 @@ const Register = () => {
             setSuccess(true);
         }
         catch (err){   
-            if(!err?.response){//In case of absence of erroe msg eg. network connection interrupted
+            if(!err?.response){//In case of absence of error msg eg. network connection interrupted
                 setErrMsg('No response from server')
             }
             else if(err.response?.status === 409){
@@ -76,7 +76,7 @@ const Register = () => {
     }
 
   return (
-    <>
+    <main className="Register">
             {success ? (
                 <section>
                     <h1>Success!</h1>
@@ -182,7 +182,7 @@ const Register = () => {
                     </p>
                 </section>
             )}
-    </>
+    </main>
   )
 }
 

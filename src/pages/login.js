@@ -53,37 +53,39 @@ const Login = () => {
   }
   
   return (
-    <section>
-      <p ref = {errRef} className={errMsg ? "errmsg": "offscreen"} aria-live="assertive">{errMsg}</p>
-      <h1>Sign In</h1>
-      <form on onSubmit={handleSubmit}>
-        <label htmlFor='username'>Username</label>
-        <input 
-          type = "text"
-          id = 'username'
-          ref = {userRef}
-          autoComplete ='off'
-          onChange = {(e)=>setUser(e.target.value)}
-          value = {user}
-          required
-        />
-        <label htmlFor='password'>Password</label>
-        <input 
-          type = "password"
-          id = 'password'
-          onChange = {(e)=>setPwd(e.target.value)}
-          value = {pwd}
-          required
-        />
-        <button>Sign In</button>
-      </form>
-      <p>
-        Need an account ? <br/>
-        <span className='line'>
-          <a href='/Register'>Sign Up</a>
-        </span>
-      </p>
-    </section>
+    <main className='login'>
+      <section>
+        <p ref = {errRef} className={errMsg ? "errmsg": "offscreen"} aria-live="assertive">{errMsg}</p>
+        <h1>Sign In</h1>
+        <form on onSubmit={handleSubmit}>
+          <label htmlFor='username'>Username</label>
+          <input 
+            type = "text"
+            id = 'username'
+            ref = {userRef}
+            autoComplete ='off'
+            onChange = {(e)=>setUser(e.target.value)}
+            value = {user}
+            required
+          />
+          <label htmlFor='password'>Password</label>
+          <input 
+            type = "password"
+            id = 'password'
+            onChange = {(e)=>setPwd(e.target.value)}
+            value = {pwd}
+            required
+          />
+          <button>Sign In</button>
+        </form>
+        <p>
+          Need an account ? <br/>
+          <span className='line'>
+            <a href='/Register'>Sign Up</a>
+          </span>
+        </p>
+      </section>
+    </main>
   )
 }
 
