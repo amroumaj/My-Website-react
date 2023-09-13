@@ -3,6 +3,11 @@
     padding:0;
     box-sizing: border-box;
 }
+    
+html{
+    font-family: monospace;
+    font-size: 1.5rem;
+}
 
 a, a:visited {
     color: aliceblue    ;
@@ -27,5 +32,69 @@ section{
     justify-content: center;
     align-items: center;
     min-height: 100vh; 
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.5rem ;
+    margin-bottom :2rem;
+}
+
+button{
+    color:whitesmoke;
+    padding:0.5rem;
+    background-color:rgba(0, 255, 255, 0.709);
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow:1;
+}
+
+input[type="text"],input[type="password"],button, textarea{
+    font-family:monospace;
+    font-size:1,1rem;
+    padding:0,25rem;
+    border-radius: 20px;
+}
+
+.instructions{
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    position: relative;
+    bottom: 10px;
+}
+
+.instructions > svg{
+    margin-right:0.25rem;
+}
+
+.offscreeen{
+    position: absolute;
+    left:-9999px;
+}
+
+.hide{
+    display:none;
+}
+
+.valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.line {
+    display: inline-block;
 }

@@ -50,3 +50,14 @@ footer{
     color:aliceblue;
 }
 
+body::-webkit-scrollbar{
+    width :0.3rem;
+}
+
+body::-webkit-scrollbar-track{
+    background:aliceblue;
+}
+
+body::-webkit-scrollbar-thumb{
+    background:cyan;
+}
