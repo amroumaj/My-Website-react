@@ -4,6 +4,7 @@ import axios from "../API/axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Register.css';
 
+
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = '/register';
@@ -136,7 +137,7 @@ const Register = () => {
                             onFocus={()=>setPwdFocus(true)}
                             onBlur={()=>setPwdFocus(false)}
                         />
-                        <p id="pwdnote" className={PwdFocus && !validPwd ? "instruction" : "offscreen"}>
+                        <p id="pwdnote" className={PwdFocus && !validPwd ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             8 to 24 characters<br />
                             Must include uppercase and lowercase letters,a number and a special character<br />
@@ -163,8 +164,8 @@ const Register = () => {
                             required
                             aria-invalid={validMatch ? "false" :true}
                             aria-describedby="confirmnote"
-                            onFocus={()=>setPwdFocus(true)}
-                            onBlur={()=>setPwdFocus(false)}
+                            onFocus={()=>setMatchFocus(true)}
+                            onBlur={()=>setMatchFocus(false)}
                         />
                         <p id="confirmnote" className={matchFocus && !validMatch ? "instructiond" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />

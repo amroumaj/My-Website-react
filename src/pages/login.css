@@ -17,7 +17,7 @@ body{
 section{
     width:100%;
     display:flex;
-    max-width: 420px;
+    max-width: 450px;
     min-height: 400px;
     flex-direction: column;
     justify-content: flex-start;
