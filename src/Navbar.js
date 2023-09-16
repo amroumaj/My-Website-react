@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Themes from './Themes';
 
 
 const Navbar = ()=>{
@@ -10,7 +11,8 @@ const Navbar = ()=>{
             <Link to ="/about">About</Link>
             <Link to ="/Register">Sign up</Link>
             <Link to ="/Login">Login</Link>
-      </div>
+{/*             <Themes />
+ */}      </div>
       </nav>
 
   );
