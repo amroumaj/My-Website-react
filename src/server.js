@@ -1,0 +1,1 @@
+application.use('/register', require('./routes/register'));
