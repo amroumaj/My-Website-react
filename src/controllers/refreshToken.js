@@ -6,7 +6,7 @@ const handleRefreshToken = (req, res) =>{
     if (!cookies?.jwt) return res.sendStatus(401);
     const refreshToken = cookies.jwt;
 
-    const foundUser = /* dataBase */.users.find(person =>person.refreshToken ==refreshToken);
+/*     const foundUser = /* dataBase .users.find(person =>person.refreshToken ==refreshToken); */
     if (!foundUser) return res.sendStatus(403);
     //evaluating the JWT
     jwt.verify(
