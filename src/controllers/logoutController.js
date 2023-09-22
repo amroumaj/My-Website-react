@@ -1,7 +1,7 @@
 const fsPromises = require('fs').promises;
 const path = require('path');
 
-const handleLogout = (req, res) =>{
+const handleLogout = async(req, res) =>{
     // on Client delete the accessToken
 
     const cookies =req.cookies;
