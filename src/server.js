@@ -18,7 +18,7 @@ app.use(errorHandler);
 
 app.use(verifyJWT);
 
-mongoose.connect.once('open', () => {
+mongoose.connection.once('open', () => {
     console.log('connected to mongoDB');
     app.listen(PORT, () => console.log(`server running on port ${PORT}`));
 });
